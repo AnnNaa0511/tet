@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài học multi page Website</title>
+    <title>Làm việc với git</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Thêm các link điều hướng -->
-    <!-- 1. Điều hướng về trang chủ -->
-    <a href="./index.html">Home</a>
-    
-    <!-- 2. Điều hướng đến contact.html -->
-    <a href="./more-info/contact.html">Contact me</a>
+    <ol>
+        <li>Lấy project từ git về máy</li>
+        <pre>
+            B1. Vào trang github
+            B2. Chọn project cần lấy về máy
+            B3. Copy URL của project
+            B4. Mở vị trí đặt project
+            B5. Nhấn chuột phải rồi chọn git bash here
+            B6. Trên màn hình console, gõ lệnh: git &lt;URL của project&gt;
+            B7. Tại vị trí đó sẽ xuất hiện project
+        </pre>
+        <li>Tải project từ máy lên git(project này đã có liên kết với repos từ trước)</li>
+            <pre>
+                B1: Nhấn chọn project
+                B2: Trong thư mục project, nhấn chuột phải rồi chọn git bash here
+                B3: Gõ lệnh: "git add ." để thêm các sửa đổi vừa thực hiện vào hàng đợi
+                B4: Gõ lệnh: "git commit -m 'Mô tả chỉnh sửa'" để xác nhận các sửa đổi
+                    và thêm mô tả cho sửa đổi đó
+                B5: Gõ lệnh: "git push" để đẩy project đã sửa đổi lên github
+            </pre>
+        <li>Tải project từ máy lên git(project này chưa có liên kết với repos từ trước)</li>
+            <pre>
+                Vì project chưa liên kết với kho chứa nào trên github nên chúng ta phải tạo mới 1 repos
+                hoặc chọn 1 repos có sẵn, copy URL của repos đó để chuẩn bị cho việc liên kết
+                với project trên máy tính
+                B1: Vào github, tạo mới 1 repos hoặc chọn 1 repos có sẵn
+                B2: Copy URL của repos vừa chọn
+                B3: Vào thư mục project trên máy tính
+                B4: Nhấn chuột phải rồi chọn git bash here
+                B5: Trong màn hình console, gõ lệnh:
+                    "git init -b main"
+                    Nếu ta ghi "git init" thì project của chúng ta sẽ được quản lí bởi nhánh(branch) master
+                    chứ không phải nhánh main, vậy nên phải thêm "-b main" để project của chúng ta chuyển vào nhánh
+                    main trong git
+                B6: Sau khi lệnh này được thực thi, project trên máy tính sẽ đc quản lí bởi git và có thể
+                    liên kết với 1 repos trên git bằng câu lệnh:
+                    "git remote add origin &lt;URL của repos&gt;"
+                B7: Gõ lệnh:
+                    "git add ."
+                    "git commit -m &lt;Mô tả chỉnh sửa&gt;"
+                B8: Liên kết project trong máy tính với repos trên git bằng lệnh:
+                    "git remote add origin &lt;URL của repos&gt;"
+                B9: Gõ lệnh"
+                    "git push"    
+            </pre>
+        <li>Cập nhật những sửa đổi của project trên git vào project trên máy</li>
+            <pre>
+                Gõ lệnh: "git pull"
+            </pre>
+        <li>Tạo ra các nhánh con để không ảnh hưởng đến nhánh chính</li>
+            <pre>
+                1. Để xem các nhánh đang tồn tại, gõ lệnh:
+                "git branch"
+                2. Nhánh có dấu * ở đầu là nhánh mình đang làm việc
+                3. Để thêm nhánh mới, ta gõ lệnh:
+                "git branch &lt;Tên nhánh mới&gt;"
+                4. Để chuyển sang làm việc trên 1 nhánh khác, gõ lệnh:
+                "git checkout &lt;Tên nhánh cần chuyển đến&gt;"
+            </pre>
 
-    <!-- 3. Điều hướng đến my-skill.html -->
-    <a href="./more-info/my-skill.html">My skill</a>
-
-
-    <h1>Welcome to My Website!</h1>
-    <hr>
-    <h2>Nguyễn Trần Như Nhộng</h2>
-    <p>Creative Director and Designer - Giám đốc sáng tạo và nhà thiết kế</p>
-    <hr>
-
-    <!-- Thêm hình ảnh tuhoc.cc.jpg và khi click chuột sẽ điều hướng đến contact.html  -->
-    <a href="./more-info/contact.html"><img src="./assets/images/tuhoc.cc.jpg" alt="Ảnh tuhoc.cc.jpg"></a>
-    
-
-    <h2>About me</h2>
-    <p>Xin chào! Tôi là một Giám đốc sáng tạo và Nhà thiết kế đầy nhiệt huyết, mang trong mình niềm đam mê với nghệ
-        thuật và khả năng tạo ra những trải nghiệm độc đáo và gây ấn tượng. Với kinh nghiệm dày dặn và sự tinh tế trong
-        việc nắm bắt xu hướng và sự phát triển, tôi luôn tìm kiếm cách để đưa ra những giải pháp sáng tạo và ứng dụng
-        độc đáo trong mọi dự án.</p>
-    <p>Tôi đảm bảo rằng mỗi dự án sẽ được thực hiện với sự chính xác và sự đổi mới. Tôi không chỉ đơn thuần là một người
-        sáng tạo, mà còn là một người lãnh đạo đội ngũ, đảm bảo rằng mọi thành viên đều được truyền cảm hứng và tận dụng
-        tối đa khả năng của họ để mang lại kết quả xuất sắc.</p>
-    <hr>
-
-
+   </ol>
 </body>
-
 </html>
