@@ -15,7 +15,8 @@
             B3. Copy URL của project
             B4. Mở vị trí đặt project
             B5. Nhấn chuột phải rồi chọn git bash here
-            B6. Trên màn hình console, gõ lệnh: git &lt;URL của project&gt;
+            B6. Trên màn hình console, gõ lệnh: 
+                git clone &lt;URL của project&gt;
             B7. Tại vị trí đó sẽ xuất hiện project
         </pre>
         <li>Tải project từ máy lên git(project này đã có liên kết với repos từ trước)</li>
@@ -49,8 +50,29 @@
                     "git commit -m &lt;Mô tả chỉnh sửa&gt;"
                 B8: Liên kết project trong máy tính với repos trên git bằng lệnh:
                     "git remote add origin &lt;URL của repos&gt;"
-                B9: Gõ lệnh"
-                    "git push"    
+                B9: Gõ lệnh:
+                    "git push" 
+                    <span>Lưu ý:</span>
+                    Khi gõ lệnh "git push" thì git bash sẽ yêu cầu bạn chỉ rõ push project lên nhánh nào
+                    Vậy nên ta phải chỉ định rõ project của chúng ta thuộc nhánh nào
+                    Giả sử project của chúng ta thuộc nhánh main, ta gõ lệnh:
+                    "git push --set-upstream origin main"
+                B10: Nếu git báo lỗi sau:
+                <img src="https://i.ytimg.com/vi/E74kF5kPUm4/sddefault.jpg" alt="Ảnh">
+                Đây là lỗi từ phía git
+                Chúng ta có 2 cách để khắc phục:
+                Cách 1: Gõ lệnh:
+                    "git pull --rebase origin main"
+                    hoặc
+                    "git pull origin main"
+                    Lệnh này sẽ áp dụng các sửa đổi trên repos git lên project local
+                    Việc sửa đổi này chỉ được áp dụng ở nhánh main
+                Cách 2: Ép buộc push
+                    "git push -f origin main"
+                    -f là viết tắt của force(ép buộc)
+                    push ép buộc
+                    Tức là ta sẽ đẩy project local lên repos git 1 cách ép buộc
+                    Tại vị trí nhánh main 
             </pre>
         <li>Cập nhật những sửa đổi của project trên git vào project trên máy</li>
             <pre>
